@@ -69,5 +69,5 @@ class TaskItem(MethodView):
         else:
             return jsonify(
                 code=status,
-                message='Task doesnot exist'
+                message='Task does not exist'
             )
