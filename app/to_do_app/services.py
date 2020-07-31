@@ -6,6 +6,10 @@ from app import db
 
 class TaskItemService:
     def update_task(self, task_id: str, data: dict):
+        """
+            Update task attributes
+            A task can be marked as completed using update task
+        """
         task = task_item_dao.get_by_task_id(task_id)
         if (task):
             is_completed = data.get('is_completed')
@@ -23,7 +27,10 @@ class TaskItemService:
             return False, 'TASK_DOES_NOT_EXIST'
 
     def create_task(self, data: dict):
-        if (data.get('name')):
+        """
+            Creates task with title and description
+        """
+        if (data.get('title')):
             task = TaskItem(
                 id=str(uuid.uuid4()),
                 title=data['title'],
@@ -36,6 +43,10 @@ class TaskItemService:
             return False, 'TASK_NAME_REQUIRED'
 
     def delete_task(self, task_id):
+        """
+            Soft deletes a task by marking is_deleted as true
+        """
+        # TODO: Support for already deleted tasks should be removed
         task = task_item_dao.get_by_task_id(task_id)
         if (task):
             task.is_deleted = True

@@ -7,6 +7,7 @@ from app.auth import authorize
 
 
 class TaskItem(MethodView):
+    # TODO: Add support for general exception by writing middleware
     @authorize
     def get(self, task_id):
         if (not task_id):
