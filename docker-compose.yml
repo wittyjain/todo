@@ -1,0 +1,21 @@
+version: '3'
+services: 
+  db:
+    image: postgres
+    restart: always
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+        - POSTGRES_DB=todo_app
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+    ports:
+      - "2701:5432"
+  todo:
+    build: ./
+    env_file:
+      - .env
+    ports:
+      - "7001:8000"
+    depends_on: 
+      - db
