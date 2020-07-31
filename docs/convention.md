@@ -8,6 +8,7 @@
 | ```doas.py```             | Database access object                                                                                           |
 | ```services.py```         | Business logic                                                                                                                                                                                    |
 | ```models.py```           | Database models |
+| ```views.py```            | MethodView APIs |
 | ```task_serialiser.py``   | Marshmallow schema serialisers
 | tests                     | Contains app test cases                                                                                                                                                    |
 |```urls.py```              | Contains app urls                                                                                                                                                                                                   |
