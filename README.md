@@ -1,4 +1,4 @@
-# Development Guideline for NETWILA
+# Development Guideline for todo-app
 
 ## Getting started
 
