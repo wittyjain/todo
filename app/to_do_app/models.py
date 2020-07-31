@@ -12,7 +12,7 @@ class Base(db.Model):
 
 class TaskItem(Base):
     __tablename__ = 'todo_task_list'
-    name = db.Column(db.String(200))
+    title = db.Column(db.String(200))
     description = db.Column(db.String(500), nullable=True)
     is_completed = db.Column(db.Boolean, default=False)
     is_deleted = db.Column(db.Boolean, default=False)
